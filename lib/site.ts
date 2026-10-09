@@ -1,7 +1,7 @@
 export const site = {
   name: 'Mahek Overseas',
   tagline: 'Global Recruitment Solutions',
-  email: 'Mahekinternationaloverseas@gmail.com',
+  email: 'info@mahekoverseas.com',
   owners: ['Rizwan Patel', 'Mahek Shaikh'],
   address: 'Office address coming soon, Mumbai, Maharashtra, India',
   mapQuery: 'Mumbai, Maharashtra, India',
