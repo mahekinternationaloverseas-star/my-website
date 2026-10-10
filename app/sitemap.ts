@@ -1,7 +1,8 @@
+
 import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://mahekoverseas.com'
+  const baseUrl = 'https://www.mahekoverseas.com'
 
   return [
     {
@@ -12,3 +13,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 }
+
