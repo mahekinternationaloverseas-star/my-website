@@ -1,3 +1,4 @@
+
 import { SiteHeader } from '@/components/site-header'
 import { Hero } from '@/components/hero'
 import { TrustBar } from '@/components/trust-bar'
@@ -5,6 +6,7 @@ import { About } from '@/components/about'
 import { Services } from '@/components/services'
 import { Industries } from '@/components/industries'
 import { Destinations } from '@/components/destinations'
+import { HajjUmrah } from '@/components/hajj-umrah'
 import { Process } from '@/components/process'
 import { WhyChooseUs } from '@/components/why-choose-us'
 import { Jobs } from '@/components/jobs'
@@ -31,6 +33,7 @@ export default async function Page({
         <Services />
         <Industries />
         <Destinations />
+        <HajjUmrah />
         <Process />
         <WhyChooseUs />
         <Jobs />
