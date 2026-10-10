@@ -2,14 +2,14 @@ import { MapPin } from 'lucide-react'
 import { Reveal, SectionHeading } from '@/components/reveal'
 
 const destinations = [
-  { country: 'United Arab Emirates', code: 'AE', cities: 'Dubai · Abu Dhabi · Sharjah', region: 'Gulf' },
-  { country: 'Saudi Arabia', code: 'SA', cities: 'Riyadh · Jeddah · Dammam', region: 'Gulf' },
-  { country: 'Qatar', code: 'QA', cities: 'Doha · Lusail', region: 'Gulf' },
-  { country: 'Kuwait', code: 'KW', cities: 'Kuwait City · Ahmadi', region: 'Gulf' },
-  { country: 'Oman', code: 'OM', cities: 'Muscat · Sohar · Salalah', region: 'Gulf' },
-  { country: 'Bahrain', code: 'BH', cities: 'Manama · Muharraq', region: 'Gulf' },
-  { country: 'Malaysia', code: 'MY', cities: 'Kuala Lumpur · Penang', region: 'Asia' },
-  { country: 'Europe', code: 'EU', cities: 'Romania · Poland · Croatia', region: 'International' },
+  { country: 'United Arab Emirates', code: 'AE', cities: 'Dubai · Abu Dhabi · Sharjah', region: 'Gulf', image: '/images/uae.jpg' },
+  { country: 'Saudi Arabia', code: 'SA', cities: 'Riyadh · Jeddah · Dammam', region: 'Gulf', image: '/images/saudi-arabia.jpg' },
+  { country: 'Qatar', code: 'QA', cities: 'Doha · Lusail', region: 'Gulf', image: '/images/qatar.jpg' },
+  { country: 'Kuwait', code: 'KW', cities: 'Kuwait City · Ahmadi', region: 'Gulf', image: '/images/kuwait.jpg' },
+  { country: 'Oman', code: 'OM', cities: 'Muscat · Sohar · Salalah', region: 'Gulf', image: '/images/oman.jpg' },
+  { country: 'Bahrain', code: 'BH', cities: 'Manama · Muharraq', region: 'Gulf', image: '/images/bahrain.jpg' },
+  { country: 'Malaysia', code: 'MY', cities: 'Kuala Lumpur · Penang', region: 'Asia', image: '/images/malaysia.jpg' },
+  { country: 'Europe', code: 'EU', cities: 'Romania · Poland · Croatia', region: 'International', image: '/images/europe.jpg' },
 ]
 
 export function Destinations() {
@@ -28,19 +28,29 @@ export function Destinations() {
               as="li"
               key={d.country}
               delay={(i % 4) * 80}
-              className="group relative overflow-hidden rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-6 transition-colors hover:border-gold/60 hover:bg-primary-foreground/10"
+              className="group relative overflow-hidden rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 transition-colors hover:border-gold/60"
             >
-              <div className="flex items-center justify-between">
-                <span className="font-serif text-4xl font-semibold text-gold/90">{d.code}</span>
-                <span className="rounded-full border border-gold/40 px-3 py-1 text-xs text-gold">
+              <div className="relative h-44 overflow-hidden">
+                <img
+                  src={d.image}
+                  alt={`${d.country} destination`}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+                <span className="absolute bottom-3 left-4 font-serif text-3xl font-semibold text-white">
+                  {d.code}
+                </span>
+                <span className="absolute right-3 top-3 rounded-full border border-white/50 bg-black/30 px-3 py-1 text-xs text-white">
                   {d.region}
                 </span>
               </div>
-              <h3 className="mt-6 text-xl font-semibold">{d.country}</h3>
-              <p className="mt-2 flex items-center gap-1.5 text-sm text-primary-foreground/70">
-                <MapPin className="size-4 shrink-0" aria-hidden="true" />
-                {d.cities}
-              </p>
+              <div className="p-5">
+                <h3 className="text-lg font-semibold">{d.country}</h3>
+                <p className="mt-2 flex items-start gap-1.5 text-sm text-primary-foreground/70">
+                  <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+                  {d.cities}
+                </p>
+              </div>
             </Reveal>
           ))}
         </ul>
