@@ -21,8 +21,7 @@ export function Hero() {
     <section id="top" className="bg-primary text-primary-foreground">
       <div className="mx-auto flex max-w-4xl flex-col items-center px-4 py-14 text-center md:px-6 md:py-20">
 
-        {/* Portrait video, then logo in the same box */}
-        <div className="relative aspect-[9/16] w-[min(70vw,20rem)] overflow-hidden rounded-xl border border-gold/40 bg-[#062d27] shadow-2xl">
+        <div className="relative aspect-square w-[min(70vw,20rem)] overflow-hidden rounded-xl border border-gold/40 bg-[#062d27] shadow-2xl">
           {videoEnded ? (
             <Image
               src={LOGO}
@@ -34,7 +33,7 @@ export function Hero() {
             />
           ) : (
             <video
-              className="h-full w-full object-contain"
+              className="h-full w-full object-cover"
               src={VIDEO}
               autoPlay
               muted
