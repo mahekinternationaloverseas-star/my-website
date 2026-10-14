@@ -20,7 +20,6 @@ export function Hero() {
   return (
     <section id="top" className="bg-primary text-primary-foreground">
       <div className="mx-auto flex max-w-4xl flex-col items-center px-4 py-14 text-center md:px-6 md:py-20">
-
         <div className="relative aspect-square w-[min(70vw,20rem)] overflow-hidden rounded-xl border border-gold/40 bg-[#062d27] shadow-2xl">
           {videoEnded ? (
             <Image
@@ -33,7 +32,7 @@ export function Hero() {
             />
           ) : (
             <video
-              className="h-full w-full object-cover"
+              className="h-full w-full object-contain"
               src={VIDEO}
               autoPlay
               muted
@@ -99,8 +98,8 @@ export function Hero() {
             </div>
           ))}
         </dl>
-
       </div>
     </section>
   )
 }
+
