@@ -1,4 +1,8 @@
+
+'use client'
+
 import Image from 'next/image'
+import { useState } from 'react'
 import { ArrowRight, BadgeCheck, Building2 } from 'lucide-react'
 
 const stats = [
@@ -7,19 +11,38 @@ const stats = [
   { value: '10+', label: 'Countries served' },
 ]
 
+const VIDEO = '/Mahek_Overseas_Brand_Intro_Reel_1080x1920_v2.mp4'
+const LOGO = '/images/mahek-logo-full.jpg'
+
 export function Hero() {
+  const [videoEnded, setVideoEnded] = useState(false)
+
   return (
     <section id="top" className="bg-primary text-primary-foreground">
       <div className="mx-auto flex max-w-4xl flex-col items-center px-4 py-14 text-center md:px-6 md:py-20">
-        <div className="relative aspect-square w-[min(70vw,20rem)] overflow-hidden rounded-xl border border-gold/40 shadow-2xl animate-in fade-in zoom-in-95 duration-700">
-          <Image
-            src="/images/mahek-logo-full.jpg"
-            alt="Mahek Overseas – Global Recruitment Solutions logo"
-            fill
-            priority
-            sizes="(min-width: 768px) 320px, 70vw"
-            className="object-cover"
-          />
+        <div className="relative aspect-square w-[min(70vw,20rem)] overflow-hidden rounded-xl border border-gold/40 bg-[#062d27] shadow-2xl">
+          {videoEnded ? (
+            <Image
+              src={LOGO}
+              alt="Mahek Overseas – Global Recruitment Solutions logo"
+              fill
+              priority
+              sizes="(min-width: 768px) 320px, 70vw"
+              className="object-contain"
+            />
+          ) : (
+            <video
+              className="h-full w-full object-contain"
+              src={VIDEO}
+              autoPlay
+              muted
+              playsInline
+              preload="auto"
+              onEnded={() => setVideoEnded(true)}
+              onError={() => setVideoEnded(true)}
+              aria-label="Mahek Overseas brand introduction"
+            />
+          )}
         </div>
 
         <p className="mt-10 text-xs font-medium uppercase tracking-[0.3em] text-gold md:text-sm">
