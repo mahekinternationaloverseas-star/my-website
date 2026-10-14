@@ -20,7 +20,9 @@ export function Hero() {
   return (
     <section id="top" className="bg-primary text-primary-foreground">
       <div className="mx-auto flex max-w-4xl flex-col items-center px-4 py-14 text-center md:px-6 md:py-20">
-        <div className="relative aspect-square w-[min(70vw,20rem)] overflow-hidden rounded-xl border border-gold/40 bg-[#062d27] shadow-2xl">
+
+        {/* Portrait video, then logo in the same box */}
+        <div className="relative aspect-[9/16] w-[min(70vw,20rem)] overflow-hidden rounded-xl border border-gold/40 bg-[#062d27] shadow-2xl">
           {videoEnded ? (
             <Image
               src={LOGO}
@@ -53,7 +55,10 @@ export function Hero() {
           Your Gateway to <span className="italic text-gold">Global Careers</span>
         </h1>
 
-        <div aria-hidden="true" className="mt-7 h-px w-40 bg-gradient-to-r from-transparent via-gold to-transparent" />
+        <div
+          aria-hidden="true"
+          className="mt-7 h-px w-40 bg-gradient-to-r from-transparent via-gold to-transparent"
+        />
 
         <p className="mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-primary-foreground/80">
           Mahek Overseas connects skilled and hardworking professionals with trusted, verified
@@ -69,6 +74,7 @@ export function Hero() {
             Apply Now
             <ArrowRight className="size-4" aria-hidden="true" />
           </a>
+
           <a
             href="#contact"
             className="inline-flex items-center justify-center gap-2 rounded-full border border-primary-foreground/30 px-7 py-3.5 font-semibold transition-colors hover:bg-primary-foreground/10"
@@ -88,10 +94,13 @@ export function Hero() {
             <div key={s.label}>
               <dt className="sr-only">{s.label}</dt>
               <dd className="font-serif text-3xl font-semibold text-gold">{s.value}</dd>
-              <dd className="mt-1 text-xs text-primary-foreground/70 md:text-sm">{s.label}</dd>
+              <dd className="mt-1 text-xs text-primary-foreground/70 md:text-sm">
+                {s.label}
+              </dd>
             </div>
           ))}
         </dl>
+
       </div>
     </section>
   )
