@@ -1,5 +1,4 @@
 
-import { SiteIntro } from '@/components/site-intro'
 import { SiteHeader } from '@/components/site-header'
 import { Hero } from '@/components/hero'
 import { TrustBar } from '@/components/trust-bar'
@@ -26,8 +25,6 @@ export default async function Page({
 
   return (
     <>
-      <SiteIntro />
-
       <SiteHeader />
 
       <main>
