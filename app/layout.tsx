@@ -80,8 +80,11 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: '/images/mahek-logo-full.jpg',
-    apple: '/images/mahek-logo-full.jpg',
+    icon: [
+      { url: '/images/icon-light-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/images/apple-icon.png', type: 'image/png' },
+    ],
+    apple: '/images/apple-icon.png',
   },
 }
 
@@ -106,3 +109,4 @@ export default function RootLayout({
     </html>
   )
 }
+
