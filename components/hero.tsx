@@ -1,4 +1,4 @@
-
+```tsx
 'use client'
 
 import Image from 'next/image'
@@ -11,7 +11,7 @@ const stats = [
   { value: '10+', label: 'Countries served' },
 ]
 
-const VIDEO = '/Mahek_Overseas_Brand_Intro_Reel_1080x1920_v2.mp4'
+const VIDEO = '/Mahek_Overseas_Video_Fixed%20(3).mp4'
 const LOGO = '/images/mahek-logo-full.jpg'
 
 export function Hero() {
@@ -32,7 +32,7 @@ export function Hero() {
             />
           ) : (
             <video
-              className="h-full w-full object-contain"
+              className="block h-full w-full object-contain"
               src={VIDEO}
               autoPlay
               muted
@@ -102,4 +102,4 @@ export function Hero() {
     </section>
   )
 }
-
+```
