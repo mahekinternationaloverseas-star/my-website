@@ -1,4 +1,5 @@
 
+import { SiteIntro } from '@/components/site-intro'
 import { SiteHeader } from '@/components/site-header'
 import { Hero } from '@/components/hero'
 import { TrustBar } from '@/components/trust-bar'
@@ -25,7 +26,10 @@ export default async function Page({
 
   return (
     <>
+      <SiteIntro />
+
       <SiteHeader />
+
       <main>
         <Hero />
         <TrustBar />
@@ -41,8 +45,10 @@ export default async function Page({
         <Faq />
         <Contact job={job} category={category} />
       </main>
+
       <SiteFooter />
       <WhatsAppButton />
     </>
   )
 }
+
