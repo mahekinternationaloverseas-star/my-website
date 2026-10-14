@@ -5,6 +5,7 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+
 const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair',
@@ -80,11 +81,8 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: [
-      { url: '/images/icon-light-32x32.png', type: 'image/png', sizes: '32x32' },
-      { url: '/images/apple-icon.png', type: 'image/png' },
-    ],
-    apple: '/images/apple-icon.png',
+    icon: '/images/mahek-logo-full.jpg',
+    apple: '/images/mahek-logo-full.jpg',
   },
 }
 
@@ -109,4 +107,3 @@ export default function RootLayout({
     </html>
   )
 }
-
